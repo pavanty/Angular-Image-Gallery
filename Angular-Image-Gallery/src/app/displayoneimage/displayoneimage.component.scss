@@ -1,0 +1,26 @@
+* {
+  background-color: black;
+}
+
+img {
+  width: 50%;
+  text-align: center;
+  margin-top: 50px;
+  height: 600px;
+  background-color: black;
+  margin-bottom: 50px;
+}
+
+.main-images {
+  text-align: center;
+  background-color: black;
+}
+
+@media (max-width: 500px) {
+  img {
+    width: 100%;
+    text-align: center;
+
+    height: 600px;
+  }
+}

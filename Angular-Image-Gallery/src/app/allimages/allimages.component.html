@@ -1,0 +1,25 @@
+<div *ngIf="!loader" class="row">
+  <ng-container class="container" *ngFor="
+      let catjsonobject of catjsonobjects
+        | paginate
+          : {
+              itemsPerPage: 9,
+              currentPage: page,
+              totalitems: totallength
+            }
+    ">
+    <div [routerLink]="['/displayoneimage', catjsonobject?.id]" [skipLocationChange]="true"
+      class="cards col-sm-6 col-md-4">
+      <img [src]="catjsonobject?.url" />
+    </div>
+  </ng-container>
+  <pagination-controls class="pagination" (pageChange)="page = $event"></pagination-controls>
+</div>
+<div style="background: #eef9fd">
+  <ngx-skeleton-loader *ngIf="loader" [theme]="{
+      'border-radius': '1px',
+      height: '800px',
+      'background-color': '#d7dbdc',
+      border: '1px solid #EEF9FD'
+    }"></ngx-skeleton-loader>
+</div>
