@@ -5,4 +5,6 @@
 ### Steps to run the code
 npm install
 
+npx json-server --watch db.json
+
 ng serve -o
